@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Random;
@@ -38,7 +39,7 @@ public class BillingServiceApplication {
             Customer customer = customerRestClient.findCustomerById(customerId);
             if(customer==null)throw new RuntimeException("Customer not found");
             Bill bill = new Bill();
-            bill.setBillDate(new Date());
+            bill.setBillDate(LocalDate.now());
             bill.setCustomerID(customerId);
             Bill savedBill = billRepository.save(bill);
             products.forEach(product -> {
@@ -57,7 +58,7 @@ public class BillingServiceApplication {
             if (customer2 == null) throw new RuntimeException("Customer not found");
 
             Bill bill2 = new Bill();
-            bill2.setBillDate(new Date());
+            bill2.setBillDate(LocalDate.now());
             bill2.setCustomerID(customerId2);
             Bill savedBill2 = billRepository.save(bill2);
 

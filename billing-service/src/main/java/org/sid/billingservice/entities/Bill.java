@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.sid.billingservice.model.Customer;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 @Entity
@@ -19,7 +20,7 @@ public class Bill {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date billDate;
+    private LocalDate billDate;
     private Long customerID;
     @OneToMany(mappedBy = "bill")
     private List<ProductItem> productItems;

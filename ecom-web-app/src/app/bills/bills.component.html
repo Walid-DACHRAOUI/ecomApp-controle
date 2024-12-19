@@ -8,10 +8,10 @@
     <tbody>
     <tr *ngFor="let b of bills._embedded.bills">
       <td>{{b.id}}</td>
-      <td>{{b.billDate | date : 'dd/mm/yyy'}}</td>
+      <td>{{b.billDate | date : 'dd/MMMM/yyy'}}</td>
       <td>{{b.customerID}}</td>
       <td>
-        <button class="btn btn-success" (click)="getBillDetails(b)">Billing details</button>
+        <button class="btn btn-outline-danger" (click)="getBillDetails(b)">Billing details</button>
       </td>
     </tr>
     </tbody>

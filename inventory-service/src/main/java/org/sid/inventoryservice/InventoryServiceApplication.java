@@ -24,9 +24,10 @@ public class InventoryServiceApplication {
             restConfiguration.exposeIdsFor(Product.class);
             productRepository.saveAll(
                     List.of(
-                            Product.builder().name("Computer").quantity(12).price(12000).build(),
-                            Product.builder().name("Printer").quantity(32).price(350).build(),
-                            Product.builder().name("Smartphone").quantity(31).price(900).build()
+                            Product.builder().name("Computer").quantity(69).price(19000).build(),
+                            Product.builder().name("Printer").quantity(100).price(499).build(),
+                            Product.builder().name("Headphone").quantity(250).price(2000).build(),
+                            Product.builder().name("Smartphone").quantity(106).price(9000).build()
                     )
             );
             productRepository.findAll().forEach(System.out::println);
